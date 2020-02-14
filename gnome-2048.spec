@@ -1,7 +1,7 @@
 %define url_ver	%(echo %version | cut -d. -f 1-2)
 
 Name:		gnome-2048
-Version:	3.34.4
+Version:	3.34.5
 Release:	1
 Summary:	A 2048 clone for GNOME
 Group:		Graphical desktop/GNOME
