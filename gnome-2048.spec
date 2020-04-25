@@ -45,3 +45,4 @@ http://en.wikipedia.org/wiki/2048_(video_game)
 %{_datadir}/glib-2.0/schemas/org.gnome.TwentyFortyEight.gschema.xml
 %{_datadir}/metainfo/org.gnome.TwentyFortyEight.appdata.xml
 %{_iconsdir}/hicolor/*/apps/org.gnome.TwentyFortyEight*.*
+%{_mandir}/man6/gnome-2048.6.*
