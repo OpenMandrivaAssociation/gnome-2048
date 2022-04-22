@@ -9,6 +9,9 @@ License:	GPLv3+
 URL:		https://wiki.gnome.org/Apps/2048
 Source0:	https://download.gnome.org/sources/gnome-2048/%{url_ver}/%{name}-%{version}.tar.xz
 
+# Merge request (not yet merged) for fix compilation with Meson 0.60+
+Patch0:   https://gitlab.gnome.org/GNOME/gnome-2048/-/merge_requests/21.patch
+
 BuildRequires:	gettext
 BuildRequires:	itstool
 BuildRequires:	meson
