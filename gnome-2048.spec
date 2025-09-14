@@ -2,7 +2,7 @@
 
 Name:		gnome-2048
 Version:	3.38.2
-Release:	6
+Release:	7
 Summary:	A 2048 clone for GNOME
 Group:		Graphical desktop/GNOME
 License:	GPLv3+
