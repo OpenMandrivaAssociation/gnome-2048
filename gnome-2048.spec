@@ -1,8 +1,8 @@
 %define url_ver	%(echo %version | cut -d. -f 1-2)
 
 Name:		gnome-2048
-Version:	3.38.2
-Release:	7
+Version:	50.1
+Release:	1
 Summary:	A 2048 clone for GNOME
 Group:		Graphical desktop/GNOME
 License:	GPLv3+
@@ -15,14 +15,15 @@ Patch0:   https://gitlab.gnome.org/GNOME/gnome-2048/-/merge_requests/21.patch
 BuildRequires:	gettext
 BuildRequires:	itstool
 BuildRequires:	meson
-BuildRequires:	libxml2-utils
-BuildRequires:	pkgconfig(gtk+-3.0)
-BuildRequires:	pkgconfig(clutter-1.0)
-BuildRequires:	pkgconfig(clutter-gtk-1.0)
+BuildRequires:	libxml2-utils >= 2.15.2
 BuildRequires:	pkgconfig(gee-0.8)
 BuildRequires:	pkgconfig(vapigen)
 BuildRequires:	pkgconfig(appstream-glib)
-BuildRequires:	pkgconfig(libgnome-games-support-1)
+BuildRequires:	pkgconfig(glib-2.0) >= 2.42            
+BuildRequires:  pkgconfig(gtk4)            
+BuildRequires:  pkgconfig(libadwaita-1)
+BuildRequires:  rust-packaging
+Provides:       bundled(libgnome-games-support)
 
 %description
 A GNOME clone of the popular game 2048.
@@ -41,11 +42,12 @@ http://en.wikipedia.org/wiki/2048_(video_game)
 
 %find_lang %{name} --with-gnome
 
-%files -f %{name}.lang
+%files -f %{name}.lang -f gnome-2048_libgnome-games-support.lang
 %license COPYING
 %{_bindir}/%{name}
 %{_datadir}/applications/org.gnome.TwentyFortyEight.desktop
 %{_datadir}/glib-2.0/schemas/org.gnome.TwentyFortyEight.gschema.xml
-%{_datadir}/metainfo/org.gnome.TwentyFortyEight.appdata.xml
+%{_datadir}/metainfo/org.gnome.TwentyFortyEight.metainfo.xml
+%{_datadir}/dbus-1/services/org.gnome.TwentyFortyEight.service
 %{_iconsdir}/hicolor/*/apps/org.gnome.TwentyFortyEight*.*
 %{_mandir}/man6/gnome-2048.6.*
