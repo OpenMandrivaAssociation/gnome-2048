@@ -29,7 +29,7 @@ http://en.wikipedia.org/wiki/2048_(video_game)
 
 
 %prep
-%autosetup -a2 -p1
+%autosetup -a1 -p1
 #cargo_prep -v vendor
 mkdir -p .cargo
 cat >> .cargo/config.toml << EOF
