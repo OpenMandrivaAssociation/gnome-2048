@@ -50,7 +50,8 @@ EOF
 
 %find_lang %{name} --with-gnome
 
-%files -f %{name}.lang -f gnome-2048_libgnome-games-support.lang
+%files -f %{name}.lang 
+#-f gnome-2048_libgnome-games-support.lang
 %license COPYING
 %{_bindir}/%{name}
 %{_datadir}/applications/org.gnome.TwentyFortyEight.desktop
