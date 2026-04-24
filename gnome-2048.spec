@@ -1,13 +1,14 @@
 %define url_ver	%(echo %version | cut -d. -f 1-2)
 
 Name:		gnome-2048
-Version:	50.1
+Version:	50.2
 Release:	1
 Summary:	A 2048 clone for GNOME
 Group:		Graphical desktop/GNOME
 License:	GPLv3+
 URL:		https://wiki.gnome.org/Apps/2048
 Source0:	https://download.gnome.org/sources/gnome-2048/%{url_ver}/%{name}-%{version}.tar.xz
+Source1:  vendor.tar.xz
 
 BuildRequires:	gettext
 BuildRequires:	itstool
@@ -28,7 +29,17 @@ http://en.wikipedia.org/wiki/2048_(video_game)
 
 
 %prep
-%autosetup -p1
+%autosetup -a2 -p1
+#cargo_prep -v vendor
+mkdir -p .cargo
+cat >> .cargo/config.toml << EOF
+[source.crates-io]
+replace-with = "vendored-sources"
+
+[source.vendored-sources]
+directory = "vendor"
+EOF
+
 
 %build
 %meson
