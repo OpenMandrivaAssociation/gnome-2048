@@ -1,3 +1,4 @@
+%undefine _debugsource_packages
 %define url_ver	%(echo %version | cut -d. -f 1-2)
 
 Name:		gnome-2048
